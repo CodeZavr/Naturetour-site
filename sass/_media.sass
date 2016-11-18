@@ -1,0 +1,144 @@
+@import "bourbon"
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+	.main-menu
+		&__item
+			margin: 0 20px
+	.fmenu
+		margin: 0 30px 15px 0
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+	.mob-menu
+		display: block
+	.main-menu
+		display: none
+		z-index: 999
+		position: absolute
+		max-width: 320px
+		width: 100%
+		right: 0px
+		padding: 22px
+		&__item
+			display: block
+			margin: 0
+			text-align: center
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+
+	.content
+		width: 100%
+	.sidebar
+		width: 100%
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+	.section-descr
+		&:before
+			content: none
+	.fmenu
+		margin: 0 15px 15px 0
+	.f-col
+		&--follow
+			width: 30%
+		&--links
+			width: 40%
+		&--contacts
+			width: 30%
+
+
+@media only screen and (max-width : 650px)
+	.logo
+		margin: 4px auto 15px
+		display: block
+	.h-contacts
+		display: block
+		width: 100%
+		text-align: center
+		&__info
+			float: none
+			text-align: center
+	.h-menu
+		float: none
+	.item
+		width: 47%
+		&:nth-child(3n)
+			margin-right: 6%
+		&:nth-child(even)
+			margin-right: 0
+	.f-title
+		font-size: 14px
+	.f-col
+		clear: both
+		margin-bottom: 20px
+		&--follow
+			width: 100%
+		&--links
+			width: 100%
+		&--contacts
+			width: 100%
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/
+	.item
+		width: 100%
+		margin-right: 0
+	.h-contacts
+		margin-bottom: 8px
+	.h-menu
+		&__item
+			margin-bottom: 5px
+	.slider
+		.owl-dots
+			max-width: 100%
+	.slide
+		&__info
+			max-width: 100%
+			width: 100%
+	.nav-tab-list
+		&__item
+			font-size: 13px
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+	.main-menu
+		display: block
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+

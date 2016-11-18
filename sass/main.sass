@@ -1,0 +1,991 @@
+@import "bourbon"
+@import "vars"
+@import "libs"
+
+// ====================================================================== //
+// =================================== RESET ============================ //
+// ====================================================================== //
+
+html
+  font-family: sans-serif
+  -ms-text-size-adjust: 100%
+  -webkit-text-size-adjust: 100%
+
+body
+  margin: 0
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary
+  display: block
+
+audio, canvas, progress, video
+  display: inline-block
+  vertical-align: baseline
+
+audio:not([controls])
+  display: none
+  height: 0
+
+[hidden], template
+  display: none
+
+a
+  background-color: transparent
+  &:active, &:hover
+    outline: 0
+
+abbr[title]
+  border-bottom: 1px dotted
+
+b, strong
+  font-weight: bold
+
+dfn
+  font-style: italic
+
+h1
+  font-size: 2em
+  margin: 0.67em 0
+
+mark
+  background: #ff0
+  color: #000
+
+small
+  font-size: 80%
+
+sub
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+
+sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+  vertical-align: baseline
+  top: -0.5em
+
+sub
+  bottom: -0.25em
+
+img
+  border: 0
+
+svg:not(:root)
+  overflow: hidden
+
+figure
+  margin: 1em 40px
+
+hr
+  -webkit-box-sizing: content-box
+  -moz-box-sizing: content-box
+  box-sizing: content-box
+  height: 0
+
+pre
+  overflow: auto
+
+code, kbd, pre, samp
+  font-family: monospace, monospace
+  font-size: 1em
+
+button, input, optgroup, select, textarea
+  color: inherit
+  font: inherit
+  margin: 0
+
+button
+  overflow: visible
+  text-transform: none
+
+select
+  text-transform: none
+
+button, html input[type="button"]
+  -webkit-appearance: button
+  cursor: pointer
+
+input
+  &[type="reset"], &[type="submit"]
+    -webkit-appearance: button
+    cursor: pointer
+
+button[disabled], html input[disabled]
+  cursor: default
+
+button::-moz-focus-inner
+  border: 0
+  padding: 0
+
+input
+  &::-moz-focus-inner
+    border: 0
+    padding: 0
+  line-height: normal
+  &[type="checkbox"], &[type="radio"]
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    padding: 0
+  &[type="number"]
+    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+      height: auto
+  &[type="search"]
+    -webkit-appearance: textfield
+    -webkit-box-sizing: content-box
+    -moz-box-sizing: content-box
+    box-sizing: content-box
+    &::-webkit-search-cancel-button, &::-webkit-search-decoration
+      -webkit-appearance: none
+
+fieldset
+  border: 1px solid #c0c0c0
+  margin: 0 2px
+  padding: 0.35em 0.625em 0.75em
+
+legend
+  border: 0
+  padding: 0
+
+textarea
+  overflow: auto
+
+optgroup
+  font-weight: bold
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+td, th
+  padding: 0
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+html
+  font-size: 10px
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+input, button, select, textarea
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+
+a
+  color: #337ab7
+  text-decoration: none
+  &:hover
+    color: #23527c
+    text-decoration: underline
+  &:focus
+    color: #23527c
+    text-decoration: underline
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+
+figure
+  margin: 0
+
+img
+  vertical-align: middle
+
+hr
+  margin-top: 20px
+  margin-bottom: 20px
+  border: 0
+  border-top: 1px solid #eee
+
+[role="button"]
+  cursor: pointer
+
+.container
+  margin-right: auto
+  margin-left: auto
+  padding-left: 15px
+  padding-right: 15px
+
+@media (min-width: 768px)
+  .container
+    width: 750px
+
+@media (min-width: 992px)
+  .container
+    width: 970px
+
+@media (min-width: 1200px)
+  .container
+    width: 1020px
+
+.row
+  margin-left: 0
+  margin-right: 0
+
+.clearfix
+  &:before, &:after
+    content: " "
+    display: table
+
+.container
+  &:before, &:after
+    content: " "
+    display: table
+
+.row
+  &:before, &:after
+    content: " "
+    display: table
+
+.clearfix:after, .container:after, .container-fluid:after, .row:after
+  clear: both
+
+@-ms-viewport
+  width: device-width
+
+// ====================================================================== //
+// ================================ MIXINS ============================== //
+// ====================================================================== //
+
+=list-cleaner()
+	list-style: none
+	margin: 0
+	padding: 0
+
+=gradientus()
+	background: #10951b
+	background: linear-gradient(to top, #0f941a, #66c13e)
+	border-radius: 5px
+	box-shadow: inset 0 0px 0 1px #0c932f, inset 2px 2px 0px 0px rgba(129,222,65,1)
+
+
+// ====================================================================== //
+// ================================ COMMON ============================== //
+// ====================================================================== //
+
+html
+	font-family: sans-serif
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+
+html, body
+	height: 100%
+
+body
+	font-family: Arial, Helvetica, sans-serif
+	line-height: 1
+	color: #3f3b30
+	background: url(/img/body-bg-light.png) top center repeat-x, #ece6d6 url(/img/body-bg.jpg) repeat
+	margin: 0
+
+a
+	color: #14961c
+	&:hover
+		color: #1cc326
+
+.wrapper
+	min-height: 100%
+	position: relative
+
+/* GRID */
+
+.container
+  margin-right: auto
+  margin-left: auto
+  padding-left: 15px
+  padding-right: 15px
+
+@media (min-width: 768px)
+  .container
+    width: 750px
+
+@media (min-width: 992px)
+  .container
+    width: 970px
+
+@media (min-width: 1200px)
+  .container
+    width: 1020px
+
+.clearfix
+  &:before, &:after
+    content: " "
+    display: table
+
+.container
+  &:before, &:after
+    content: " "
+    display: table
+
+.row
+  &:before, &:after
+    content: " "
+    display: table
+
+.clearfix:after, .container:after, .container-fluid:after, .row:after
+  clear: both
+
+.row
+	margin: 0
+
+.hide
+	display: none
+
+// ====================================================================== //
+// =============================== HEADER =============================== //
+// ====================================================================== //
+
+.header
+	padding: 16px 0 9px
+
+.logo
+	display: inline-block
+	max-width: 236px
+	margin-left: 25px
+	margin-top: 4px
+	&__img
+		width: 100%
+
+.h-contacts
+	font-family: MyriadPro
+	display: inline-block
+	float: right
+	margin-bottom: 20px
+	&__info
+		font-size: 12px
+		color: #585755
+		text-align: right
+	&__tel
+		display: block
+		font-size: 20px
+		color: #373737
+		margin: 4px 0 16px
+
+.h-menu
+	margin: 0
+	padding: 0
+	list-style: none
+	font-family: Zurich
+	font-weight: normal
+	font-size: 0
+	text-transform: uppercase
+	float: right
+	&__item
+		display: inline-block
+		font-size: 13px
+		margin-left: 15px
+		&:first-child
+			margin-left: 0
+	&__link
+		color: #209a28
+		&:hover
+			color: #65c03d
+
+
+// ====================================================================== //
+// ============================ MAIN SECTION ============================ //
+// ====================================================================== //
+
+.menu
+	position: relative
+
+.main-menu
+	+gradientus
+	margin: 0
+	padding: 0
+	list-style: none
+	font-size: 0
+	font-family: Zurich
+	font-weight: bold
+	padding: 13px 25px
+	margin: 0 0 15px 0
+	&__item
+		display: inline-block
+		font-size: 15px
+		margin: 0 26px
+		&:first-child
+			margin-left: 0
+	&__link
+		color: #fff
+		text-shadow: 0 -2px #1c7c1f
+		&:hover, &:active
+			color: #e2e2e2
+			text-decoration: none
+
+.bread-crumbs
+	+list-cleaner
+	font-size: 0
+	margin-bottom: 6px
+	&__item
+		font-size: 12px
+		display: inline-block
+		padding-left: 22px
+
+.main-sect
+	border: 1px solid #e1dbce
+	border-radius: 5px
+	margin-bottom: 15px
+	background: #fff
+
+.content
+	width: calc(100% - 250px)
+	padding: 0 17px
+	float: left
+
+.slider
+	max-width: 705px
+	max-height: 266px
+	width: 100%
+	border-radius: 10px
+	overflow: hidden
+	color: #ffffff
+	position: relative
+	margin: 18px 0 25px
+
+.slide
+	position: relative
+	&__info
+		max-width: 235px
+		height: 100%
+		background-color: rgba(#251d14, 0.9)
+		padding: 19px 15px 70px
+		border-radius: 0 10px 10px 0
+		margin-left: auto
+	&__title
+		font-size: 22px
+		font-family: Zurich
+		font-weight: normal
+		margin: 0
+		padding: 0
+	&__btitle
+		font-size: 32px
+		display: block
+		color: #28b028
+		margin-top: 4px
+		margin-bottom: 15px
+	&__text
+		font-size: 12px
+		line-height: 18px
+		margin: 0
+	&__more
+		font-size: 12px
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		z-index: -1
+
+.section-descr
+	position: relative
+	padding-bottom: 18px
+	&:before
+		content: ""
+		width: 187px
+		height: 133px
+		position: absolute
+		background: url(/img/section-img.png) no-repeat
+		bottom: 0
+		right: 47px
+		z-index: 999
+	&__wrap
+		max-width: 425px
+	&__title
+		font-family: Zurich
+		font-weight: normal
+		font-size: 26px
+		letter-spacing: 0.3px
+		text-transform: uppercase
+		color: #444137
+		margin: 0
+		margin-bottom: 9px
+		padding: 0
+	&__text
+		font-size: 12px
+		line-height: 20px
+		margin: 0
+
+.nav-tab-list
+	+list-cleaner
+	font-size: 0
+	margin-bottom: 24px
+	&__item
+		display: inline-block
+		vertical-align: top
+		font-size: 18px
+		font-family: Zurich
+		font-weight: normal
+		max-width: 33.3%
+		width: 100%
+		text-align: center
+		border: 1px solid #dad9d3
+		border-left: none
+		background: linear-gradient(bottom, #f4f3f1, #ffffff)
+		position: relative
+		&.active
+			+gradientus
+			border-radius: 0
+			text-shadow: 0 -2px #207e21
+			&:before
+				content: ""
+				position: absolute
+				bottom: -5px
+				left: 50%
+				transform: translateX(-50%)
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 5px 5px 0
+				border-color: #13961c transparent transparent
+			&>a
+				color: #fff
+		&:first-child
+			border-radius: 5px 0 0 5px
+			border: 1px solid #dad9d3
+		&:last-child
+			border-radius: 0 5px 5px 0
+	&__link
+		padding: 10px 0
+		width: 100%
+		display: block
+		color: #444137
+		&:hover,&:active, &:focus
+			text-decoration: none
+			outline: none
+			border: none
+			border-radius: 0
+			color: #444137
+
+
+.items
+	font-size: 0
+.item
+	width: 31.25%
+	margin-right: 3.125%
+	display: inline-block
+	vertical-align: top
+	font-size: 12px
+	margin-bottom: 21px
+	&:nth-child(3n)
+		margin-right: 0
+	&__imgblock
+		width: 100%
+		border: 5px solid #e9e6df
+		background: #e9e6df
+		border-radius: 10px
+		overflow: hidden
+		margin-bottom: 7px
+	&__img
+		width: 100%
+		height: auto
+	&__title
+		font-size: 14px
+		margin: 0
+		margin-bottom: 7px
+	&__link
+		color: #3a3731
+		&:hover
+			color: #3a3731
+	&__descr
+		font-size: 12px
+		line-height: 18px
+		margin: 0
+
+// ====================================================================== //
+// ================================= SIDEBAR ============================ //
+// ====================================================================== //
+
+.sidebar
+	background: #f4f2ec
+	padding: 18px 0
+	width: 248px
+	float: right
+	border-left: 1px solid #e8e3da
+	color: #3f3b30
+	border-radius: 0 5px 5px 0
+	margin: 1px 1px 1px 0
+
+.s-item
+	margin-bottom: 22px
+	border-bottom: 1px solid #e1dbce
+	padding: 0 21px 22px
+	&:last-child
+		margin: 0
+		border: 0
+		padding-bottom: 0
+	&__title
+		font-size: 14px
+		font-family: MyriadPro
+		text-transform: uppercase
+		font-weight: normal
+		margin: 0
+		margin-bottom: 8px
+	&__descr
+		font-size: 12px
+		margin: 0
+		margin-bottom: 12px
+		line-height: 18px
+
+.select-form
+	margin-bottom: 28px
+	&__submit
+		+gradientus
+		position: relative
+		height: 34px
+		width: 90%
+		border: 0
+		font-family: Klavika
+		color: #fff
+		text-transform: uppercase
+		text-shadow: 0 -3px #1f7e20
+		font-weight: normal
+		box-shadow: 0 0 0 3px #e8e5de
+		padding-right: 10%
+		display: block
+		line-height: 34px
+		font-size: 14px
+		outline: none
+		&:after
+			content: ""
+			position: absolute
+			top: 50%
+			right: -10%
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 17px 0 17px 20px
+			border-color: transparent transparent transparent transparent
+			background-image: linear-gradient(to top, #0f941a, #66c13e)
+			transform: translateY(-50%)
+
+.search-form
+
+.form-text
+	width: calc(100% - 78px)
+	display: inline-block
+	vertical-align: middle
+	font-size: 11px
+	border: 0
+	box-shadow: 0 0 0 3px #e8e5de
+	border-radius: 5px
+	height: 26px
+	outline: none
+	color: #666666
+	border: 1px solid #cfcdc5
+	padding: 0 15px 0 7px
+	float: left
+	&--long
+		float: none
+		width: 100%
+		margin-bottom: 14px
+		clear: both
+
+.form-submit
+	+gradientus
+	font-family: Klavika
+	font-size: 14px
+	color: #fff
+	padding: 7px
+	border: none
+	width: 67px
+	display: inline-block
+	box-shadow: 0 0 0 3px #e8e5de
+	font-weight: normal
+	text-transform: uppercase
+	height: 26px
+	outline: none
+	text-shadow: 0 -2px #1f7e20
+	float: right
+
+.s-news
+	font-size: 12px
+	margin-bottom: 20px
+	&__title
+		margin: 0
+		font-weight: bold
+		margin-bottom: 5px
+	&__link
+		color: #3f3b30
+		&:hover
+			color: #3f3b30
+	&__date
+		font-weight: bold
+		margin-bottom: 5px
+		display: block
+	&__text
+		line-height: 18px
+		margin: 0
+
+
+
+// ====================================================================== //
+// ================================= FOOTER ============================ //
+// ====================================================================== //
+
+.footer
+	position: absolute
+	left: 0px
+	bottom: 0px
+	width: 100%
+	min-width: 320px
+
+.f-box
+	border-radius: 5px
+	overflow: hidden
+	font-size: 12px
+	line-height: 18px
+	margin-bottom: 20px
+
+.f-title
+	text-align: center
+	background: #878176 linear-gradient(bottom, #6e675e, #999387)
+	padding: 13px 20px
+	font-size: 16px
+	font-style: italic
+	color: #ffffff
+	text-shadow: 1px 1px #1f1d1b
+	border-bottom: 2px solid #635543
+
+.f-cols
+	background: #f4f2ec
+	padding: 21px 0 10px
+	color: #757268
+
+.f-col
+	position: relative
+	padding: 0 25px
+	float: left
+	&:before
+		content: ""
+		position: absolute
+		right: 1px
+		top: -8px
+		width: 1px
+		height: 118px
+		background: #d8d6ce
+	&:after
+		content: ""
+		position: absolute
+		right: 0px
+		top: -8px
+		width: 1px
+		height: 118px
+		background: #faf9f7
+	&:nth-child(3n+3)
+		&:before
+			content: none
+		&:after
+			content: none
+	&--follow
+		width: 25.3%
+	&--links
+		width: 51.7%
+	&--contacts
+		width: 23%
+	&__title
+		font-family: Klavika
+		font-size: 14px
+		text-transform: uppercase
+		color: #64522a
+		font-weight: normal
+		margin: 0
+		line-height: 1
+		margin-bottom: 10px
+	&__descr
+		margin: 0
+		margin-bottom: 12px
+	&__contacts
+		margin: 0
+		margin-bottom: 23px
+	&__soc
+		max-width: 100%
+		height: auto
+
+.fmenu
+	+list-cleaner
+	float: left
+	margin-right: 47px
+	margin-bottom: 15px
+	&:nth-child(3n+3)
+		margin-right: 0
+	&__link
+		color: #757268
+		&:hover
+			color: #757268
+
+.copyright
+	text-align: center
+	font-size: 11px
+	margin-bottom: 75px
+	&__company
+		font-weight: bold
+		margin-bottom: 3px
+		display: block
+	&__text
+		margin: 0
+		line-height: 18px
+
+// ====================================================================== //
+// ================================= SELECTS ============================ //
+// ====================================================================== //
+
+.jq-selectbox
+	width: 100%
+	margin-bottom: 17px
+	&:last-child
+		margin-bottom: 22px
+	li
+		&:hover
+			background-color: #0c932f
+	&:hover
+		.jq-selectbox__trigger-arrow
+			border-top-color: #fff
+	&__select
+		height: 25px
+		font-size: 11px
+		line-height: 25px
+		border-radius: 5px
+		padding: 0px 45px 0 8px
+		text-shadow: none
+		border: 1px solid #cfcdc5
+		background: #fff
+		color: #231f20
+		box-shadow: 0 0 0 3px #e8e5de
+		outline: none
+	&__trigger
+		width: 20px
+		height: 19px
+		background: #615b49
+		border: none
+		-webkit-border-radius: 2px
+		border-radius: 2px
+		top: 2px
+		right: 2px
+	&__trigger-arrow
+		top: 44%
+		left: 50%
+		border-top: 5px solid #fff
+		transform: translate(-50%)
+	&__dropdown
+		font-size: 11px
+
+// ====================================================================== //
+// ============================== OWL CAROUSEL ========================== //
+// ====================================================================== //
+
+.slider
+	.owl-item
+		img
+			width: initial
+	.owl-dots
+		display: inline-block
+		position: absolute
+		bottom: 24px
+		right: 0
+		width: 100%
+		max-width: 235px
+		padding: 0 15px
+	.owl-dot
+		vertical-align: middle
+		display: inline-block
+		line-height: 20px
+		width: 20px
+		height: 20px
+		text-align: center
+		border-radius: 50%
+		font-size: 12px
+		background: #6b685e
+		color: #cbcbcb
+		margin-right: 11px
+		cursor: pointer
+		box-shadow: -1px 1px 0 0 #aaa594
+		&:last-child
+			margin-right: 0
+		&.active
+			width: 26px
+			height: 26px
+			line-height: 26px
+			background: #43ac2d
+			color: #fff
+			box-shadow: none
+
+// ====================================================================== //
+// =============================== MOB BUTTON =========================== //
+// ====================================================================== //
+
+.mob-menu
+	background: #2d261d
+	margin-bottom: 10px
+	display: none
+
+.c-hamburger
+	display: block
+	position: relative
+	overflow: hidden
+	margin: 0
+	padding: 0
+	width: 40px
+	height: 40px
+	font-size: 0
+	text-indent: -9999px
+	appearance: none
+	box-shadow: none
+	border-radius: none
+	border: none
+	cursor: pointer
+	transition: background 0.3s
+	&:focus
+		outline: none
+	span
+		display: block
+		position: absolute
+		top: 20px
+		left: 7px
+		right: 7px
+		height: 4px
+		background: #fff
+		&::before, &::after
+			position: absolute
+			display: block
+			left: 0
+			width: 100%
+			height: 4px
+			background-color: #fff
+			content: ""
+		&::before
+			top: -10px
+		&::after
+			bottom: -10px
+
+.c-hamburger--htx
+	background-color: #5dbc3a
+	margin-left: auto
+	span
+		transition: background 0s 0.3s
+		&::before, &::after
+			transition-duration: 0.3s, 0.3s
+			transition-delay: 0.3s, 0s
+		&::before
+			transition-property: top, transform
+		&::after
+			transition-property: bottom, transform
+	&.is-active
+		background-color: #cb0032
+		span
+			background: none
+			&::before
+				top: 0
+				transform: rotate(45deg)
+			&::after
+				bottom: 0
+				transform: rotate(-45deg)
+			&::before, &::after
+				transition-delay: 0s, 0.3s
+
+@import "media"

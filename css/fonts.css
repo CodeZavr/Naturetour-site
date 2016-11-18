@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "roboto";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "MyriadPro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/MyriadProRegular/MyriadPro-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MyriadProRegular/MyriadPro-Regular.woff") format("woff"), url("../fonts/MyriadProRegular/MyriadPro-Regular.ttf") format("truetype"), url("../fonts/MyriadProRegular/MyriadPro-Regular.svg#MyriadPro") format("svg"); }
+
+@font-face {
+  font-family: "Klavika";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/KlavikaMediumPlain/KlavikaMedium-Plain.eot?#iefix") format("embedded-opentype"), url("../fonts/KlavikaMediumPlain/KlavikaMedium-Plain.woff") format("woff"), url("../fonts/KlavikaMediumPlain/KlavikaMedium-Plain.ttf") format("truetype"), url("../fonts/KlavikaMediumPlain/KlavikaMedium-Plain.svg#Klavika") format("svg"); }
+
+@font-face {
+  font-family: "Zurich";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/ZurichBTRoman/ZurichBT-RomanCondensed.eot?#iefix") format("embedded-opentype"), url("../fonts/ZurichBTRoman/ZurichBT-RomanCondensed.woff") format("woff"), url("../fonts/ZurichBTRoman/ZurichBT-RomanCondensed.ttf") format("truetype"), url("../fonts/ZurichBTRoman/ZurichBT-RomanCondensed.svg#Zurich") format("svg"); }
+
+@font-face {
+  font-family: "Zurich";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/ZurichBTBold/ZurichBT-BoldCondensed.eot?#iefix") format("embedded-opentype"), url("../fonts/ZurichBTBold/ZurichBT-BoldCondensed.woff") format("woff"), url("../fonts/ZurichBTBold/ZurichBT-BoldCondensed.ttf") format("truetype"), url("../fonts/ZurichBTBold/ZurichBT-BoldCondensed.svg#Zurich") format("svg"); }
